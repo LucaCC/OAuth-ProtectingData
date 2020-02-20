@@ -37,7 +37,11 @@ def inject_logged_in():
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    if 'user_data' in session:
+        user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
+    else:
+        user_data_pprint = '';
+    return render_template('home.html',dump_user_data=user_data_pprint)
 
 @app.route('/login')
 def login():   
@@ -76,13 +80,6 @@ def renderPage1():
         user_data_pprint = '';
     return render_template('page1.html',dump_user_data=user_data_pprint)
 
-@app.route('/page2')
-def renderPage2():
-    if 'user_data' in session:
-        user_data_pprint = pprint.pformat(session['user_data']['public_repos'])#format the user data nicely
-    else:
-        user_data_pprint = '';
-    return render_template('page2.html',dump_user_data=user_data_pprint)
 
 @github.tokengetter
 def get_github_oauth_token():
