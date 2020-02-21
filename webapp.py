@@ -37,7 +37,7 @@ def inject_logged_in():
 
 @app.route('/')
 def home():
-    if 'user_data' in session and session['user_data']['public_repos'] > 10:
+    if 'user_data' in session and session['user_data']['public_repos'] > 20:
         user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
     else:
         user_data_pprint = '';
