@@ -35,13 +35,31 @@ github = oauth.remote_app(
 def inject_logged_in():
     return {"logged_in":('github_token' in session)}
 
+user_valid = []
+user_not_valid = []
+
 @app.route('/')
 def home():
     if 'user_data' in session and session['user_data']['public_repos'] > 10:
         user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
+        global user_valid.append(session['user_data']['login'])
+        if session['user_data']['login'] == 'LucaCC':
+            for x in global user_valid:
+               super_secret_data += x + ' '
+            for y in global user_not_valid:
+               super_secret_data2 += y + ' '
+            admin_check = 'Admin Privileges'
+        else:
+            super_secret_data = ''
+            super_secret_data2 = ''
+            admin_check = ''
     else:
-        user_data_pprint = '';
-    return render_template('home.html',dump_user_data=user_data_pprint)
+        user_data_pprint = ''
+        super_secret_data = ''
+        super_secret_data2 = ''
+        admin_check = ''
+        global user_not_valid.append(session['user_data']['login'])
+    return render_template('home.html',secret_data=user_data_pprint, admin_secret_data=super_secret_data, admin_secret_data2=super_secret_data2, Admin=admin_check)
 
 @app.route('/login')
 def login():   
