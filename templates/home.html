@@ -1,27 +1,22 @@
 <!DOCTYPE html>
-  
 <html>
-  
   <body>
-    
     <p>This is the Home page</p>
-    
+      
     {% if logged_in %}
 	  <a href="/logout">Logout</a>
 	  {% else %}
 	  <a href="/login">Login</a>
 	  {% endif %}
-    
+      
     <pre>
       {{secret_data}}
-    </pre>
-	  
+    </pre>  
+      
     <h2>{{Admin}</h2>
-    
+      
 	<pre>
       {{admin_secret_data}}
     </pre>
-    
-  </body>
-  
+	 </body>
 </html>
