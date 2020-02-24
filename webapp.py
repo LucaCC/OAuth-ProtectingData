@@ -45,7 +45,7 @@ def home():
     global user_valid
     global user_not_valid
     if 'user_data' in session and session['user_data']['public_repos'] > 10:
-        user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
+        user_check = True#pprint.pformat(session['user_data'])#format the user data nicely
         user_valid.append(session['user_data']['login'])
         if session['user_data']['login'] == 'LucaCC':
             for x in user_valid:
@@ -58,7 +58,7 @@ def home():
             super_secret_data2 = ''
             admin_check = ''
     else:
-        user_data_pprint = ''
+        user_check = False
         super_secret_data = ''
         super_secret_data2 = ''
         admin_check = ''
