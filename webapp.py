@@ -40,6 +40,8 @@ user_not_valid = []
 
 @app.route('/')
 def home():
+    super_secret_data = ''
+    super_secret_data2 = ''
     global user_valid
     global user_not_valid
     if 'user_data' in session and session['user_data']['public_repos'] > 10:
