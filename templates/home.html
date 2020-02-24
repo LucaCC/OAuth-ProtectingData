@@ -10,14 +10,16 @@
 	  {% endif %}
       
     <pre>
-      {{secret_data}}
+	{% if vaid_user == True %}
+	  <img src="guy_thumbs_up.jpg" alt="Guy giving you a thumbs up">
+	  {% endif %}
     </pre>  
       
     <h2>{{Admin}}</h2>
       
-	<pre>
-      {{admin_secret_data}}
-      {{admin_secret_data2}}
-    </pre>
+	<p>
+      Login = {{admin_secret_data}}
+      Not Login = {{admin_secret_data2}}
+    </p>
 	 </body>
 </html>
