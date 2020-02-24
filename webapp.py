@@ -64,7 +64,6 @@ def home():
         admin_check = ''
         if 'user_data' in session:
             user_not_valid.append(session['user_data']['login'])
-    print(user_check)
     return render_template('home.html',valid_user=user_check, admin_secret_data=super_secret_data, admin_secret_data2=super_secret_data2, Admin=admin_check)
 
 @app.route('/login')
