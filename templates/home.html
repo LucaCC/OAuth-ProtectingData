@@ -10,7 +10,7 @@
 	  {% endif %}
       
 	{% if valid_user == True %}
-	  <img src="guy_thumbs_up.jpg" alt="Guy giving you a thumbs up">
+	  <img src="{{url_for('static', filename='guy_thumbs_up.jpg')}}" alt="Guy giving you a thumbs up">
 	  {% endif %}
 	  
     <h2>{{Admin}}</h2>
