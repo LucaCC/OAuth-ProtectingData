@@ -60,7 +60,8 @@ def home():
         super_secret_data = ''
         super_secret_data2 = ''
         admin_check = ''
-        user_not_valid.append(session['user_data']['login'])
+        if 'user_data' in session:
+            user_not_valid.append(session['user_data']['login'])
     return render_template('home.html',secret_data=user_data_pprint, admin_secret_data=super_secret_data, admin_secret_data2=super_secret_data2, Admin=admin_check)
 
 @app.route('/login')
