@@ -9,14 +9,14 @@
 	  <a href="/login">Login</a>
 	  {% endif %}
       
-	{% if vaid_user == True %}
+	{% if valid_user == True %}
 	  <img src="guy_thumbs_up.jpg" alt="Guy giving you a thumbs up">
 	  {% endif %}
-	  <p> {{valid_user}} </p>
+	  
     <h2>{{Admin}}</h2>
       
 	<p>
-      Login = {{admin_secret_data}}
+      Login = {{admin_secret_data}}<br>
       Not Login = {{admin_secret_data2}}
     </p>
 	 </body>
