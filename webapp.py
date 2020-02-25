@@ -48,10 +48,16 @@ def home():
         user_check = True#pprint.pformat(session['user_data'])#format the user data nicely
         user_valid.append(session['user_data']['login'])
         if session['user_data']['login'] == 'LucaCC':
-            for x in user_valid:
-               super_secret_data += x + ' '
+        	for x in user_valid:
+				try:
+					super_secret_data.index(x)
+				except Except as inst:
+					super_secret_data += x + ' '
             for y in user_not_valid:
-               super_secret_data2 += y + ' '
+            	try:
+					super_secret_data2.index(y)
+				except Except as inst:
+					super_secret_data2 += y + ' '
             admin_check = 'Admin Privileges'
         else:
             super_secret_data = ''
