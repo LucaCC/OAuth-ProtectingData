@@ -50,7 +50,7 @@ def home():
         if session['user_data']['login'] == 'LucaCC':
             for x in user_valid:
                 try:
-                    super_secret_data.index(x)
+                    super_secret_data.index(x) #checking for error
                 except Exception as inst:
                     super_secret_data += x + ' '
             for y in user_not_valid:
