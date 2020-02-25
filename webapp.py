@@ -51,12 +51,12 @@ def home():
             for x in user_valid:
                 try:
                     super_secret_data.index(x)
-                except Except as inst:
+                except Exception as inst:
                     super_secret_data += x + ' '
             for y in user_not_valid:
                 try:
                     super_secret_data2.index(y)
-                except Except as inst:
+                except Exception as inst:
                     super_secret_data2 += y + ' '
             admin_check = 'Admin Privileges'
         else:
