@@ -11,8 +11,6 @@
       
 	{% if valid_user == True %}
 	  <br><img src="{{url_for('static', filename='guy_thumbs_up.jpg')}}" alt="Guy giving you a thumbs up">
-	  {% else %}
-	  <h1> You annot access this website </h1>
 	  {% endif %}
 	  
 	{% if Admin == "Admin Privileges" %}  
