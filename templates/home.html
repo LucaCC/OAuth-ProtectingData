@@ -11,13 +11,16 @@
       
 	{% if valid_user == True %}
 	  <br><img src="{{url_for('static', filename='guy_thumbs_up.jpg')}}" alt="Guy giving you a thumbs up">
+	  {% endif %}
 	  
+	{% if Admin == "Admin Privileges" %}  
     <h2>{{Admin}}</h2>
       
 	<p>
       Logged in = {{admin_secret_data}}<br>
       Failed to Login = {{admin_secret_data2}}
     </p>
-        {% endif %}
+	  {% endif %}
+        
 	 </body>
 </html>
