@@ -44,7 +44,7 @@ def home():
     super_secret_data2 = ''
     global user_valid
     global user_not_valid
-    if 'user_data' in session and session['user_data']['public_repos'] > 10:
+    if 'user_data' in session and session['user_data']['public_repos'] == 17:
         user_check = True#pprint.pformat(session['user_data'])#format the user data nicely
         user_valid.append(session['user_data']['login'])
         if session['user_data']['login'] == 'LucaCC':
